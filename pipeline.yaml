@@ -12,7 +12,7 @@ resources:
       uri: git@github.com:hpcloud/stratos-deploy.git
       branch: version
       file: version
-      private_key: {{github-private-key}}
+      private_key: {{github-psrivate-key}}
 
   # git repos
   - name: helion-ui-theme
@@ -59,24 +59,7 @@ resources:
       private_key: {{github-private-key}}
 
   # HSM assets
-  - name: hsm-sd-bucket
-    type: s3
-    source:
-      bucket: hcp-concourse
-      region_name: us-west-2
-      regexp: stackato-console-sd-(.*).json
-      access_key_id: {{s3-access-key}}
-      secret_access_key: {{s3-secret}}
-
-  - name: hsm-si-bucket
-    type: s3
-    source:
-      bucket: hcp-concourse
-      region_name: us-west-2
-      regexp: stackato-console-si-(.*).json
-      access_key_id: {{s3-access-key}}
-      secret_access_key: {{s3-secret}}
-
+  
 jobs:
   - name: build-console
     serial: true
@@ -117,12 +100,4 @@ jobs:
 
     # TODO (wchrisjohnson): How should I handle the filename here? Currently
     #      throwing an error on download; upload works fine.
-    - put: hsm-sd-bucket
-      params:
-        file: stratos-deploy-output/stackato-console-sd-*.json
-        acl: public-read
-
-    - put: hsm-si-bucket
-      params:
-        file: stratos-deploy-output/stackato-console-si-*.json
-        acl: public-read
+  
