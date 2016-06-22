@@ -77,27 +77,3 @@ jobs:
       params: {bump: patch}
     - put: resource-version
       params: {file: resource-version/number}
-
-    # - task: build-proxy-image
-    #   file: stratos-deploy/ci/tasks/build-proxy-image.yml
-    # - put: portal-proxy-image
-    #   params:
-    #     dockerfile: portal-proxy-output/Dockerfile.UCP
-    #     build: portal-proxy-output
-
-    # - task: build-ui-image
-    #   file: stratos-deploy/ci/tasks/build-ui-image.yml
-    # - put: stratos-server-image
-    #   params:
-    #     dockerfile: stratos-server-output/Dockerfile.UCP
-    #     build: stratos-server-output
-
-    # - task: build-hsm-configs
-    #  file: stratos-deploy/ci/tasks/build-hsm-configs.yml
-    #  params:
-    #    registry: {{registry}}
-    #    tag: {{ [resource-version/number] }}
-
-    # TODO (wchrisjohnson): How should I handle the filename here? Currently
-    #      throwing an error on download; upload works fine.
-  
