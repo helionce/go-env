@@ -1,14 +1,6 @@
 {
-	"ImportPath": "github.com/ingydotnet/go-env",
+	"ImportPath": "github.com/helionce/go-env",
 	"GoVersion": "go1.6",
 	"GodepVersion": "v62",
-	"Packages": [
-		"./..."
-	],
-	"Deps": [
-		{
-			"ImportPath": "github.com/ingydotnet/go-env",
-			"Rev": "8b1d19dac2e81b20503451b7745f6b31ad9c8082"
-		}
-	]
+	"Deps": [ ]
 }
