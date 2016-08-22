@@ -1,6 +1,7 @@
 {
 	"ImportPath": "github.com/helionce/go-env",
-	"GoVersion": "go1.6",
+	"GoVersion": "go1.6.2",
 	"GodepVersion": "v62",
-	"Deps": [ ]
+	"Deps": [
+	]
 }
